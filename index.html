@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Exam System</title>
+</head>
+<body>
+
+    <h1>-------- Online Exam System --------</h1>
+
+    <script>
+        // Admin login credentials
+        let user = "Admin";
+        let password = "Admin@1234";
+
+        let no = prompt("Do you want to join the exam? (yes/no):");
+        
+        if (no.toLowerCase() === "no") {
+            document.write("Please select 'yes' to continue with the exam.<br>");
+        } else if (no.toLowerCase() === "yes") {
+            document.write("-------------<br>");
+            document.write("Continue your exam:<br>");
+            document.write("-------------<br>");
+
+            let username = prompt("Enter your Username:");
+            let userPass = prompt("Enter your Password:");
+
+            if (username === user && userPass === password) {
+                let subject = prompt("Please select a subject: math1 or python");
+
+                if (subject.toLowerCase() === "math1") {
+                    // Displaying question and options for math1
+                    document.write("<h2>Question 1</h2>");
+                    document.write("-------------<br>");
+                    document.write("HCF of 8, 9, 25 is:<br>");
+                    document.write("(a) 8<br>");
+                    document.write("(b) 9<br>");
+                    document.write("(c) 25<br>");
+                    document.write("(d) 1<br>");
+                    document.write("-------------<br>");
+
+                    // Prompting the user to select an option
+                    let ans = prompt("Select your option (a/b/c/d):");
+
+                    // Check the answer and show result
+                    if (ans.toLowerCase() === "d") {
+                        document.write("Selected Answer: " + ans + " is Correct<br>");
+                        document.write("-------------<br>");
+                        document.write("Admin, Your result: Pass<br>");
+                    } else {
+                        document.write("Selected Answer: " + ans + " is Incorrect<br>");
+                        document.write("-------------<br>");
+                        document.write("Admin, Your result: Fail<br>");
+                    }
+                } else if (subject.toLowerCase() === "python") {
+                    // Displaying question and options for python
+                    document.write("<h2>Question 1</h2>");
+                    document.write("-------------<br>");
+                    document.write("Who developed the Python programming language?<br>");
+                    document.write("(a) Wick van Rossum<br>");
+                    document.write("(b) Rasmus Lerdorf<br>");
+                    document.write("(c) Guido van Rossum<br>");
+                    document.write("(d) Niene Stom<br>");
+                    document.write("-------------<br>");
+
+                    // Prompting the user to select an option
+                    let answer = prompt("Select your option (a/b/c/d):");
+
+                    // Check the answer and show result
+                    if (answer.toLowerCase() === "c") {
+                        document.write("Selected Answer: " + answer + " is Correct<br>");
+                        document.write("-------------<br>");
+                        document.write("Admin, Your result: Pass<br>");
+                    } else {
+                        document.write("Selected Answer: " + answer + " is Incorrect<br>");
+                        document.write("-------------<br>");
+                        document.write("Admin, Your result: Fail<br>");
+                    }
+                } else {
+                    document.write("Please select either 'math1' or 'python'.<br>");
+                }
+            } else {
+                document.write("Please enter a valid username and password.<br>");
+            }
+        } else {
+            document.write("Please enter 'yes' or 'no' only.<br>");
+        }
+    </script>
+
+</body>
+</html>
